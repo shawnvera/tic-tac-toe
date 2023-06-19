@@ -1,4 +1,4 @@
-**Procedural**
+**Procedural** /n
 BEGIN
 
 WHO - player 1 and player 2
