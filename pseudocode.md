@@ -43,9 +43,8 @@ HOW - by using vanilla Javascript, HTML, and CSS
 *STATE:*
 
     The program will remember the default game board
-    The program will remember the user's symbols
+    The program will remember the user's symbols / players
     The program will remember the location of user symbols on the tic tac toe board
-    The program will remember the players
     The program will remember whose the current player
     The program will remember which spaces have been clicked by the user(s)
     The program will remember past games
@@ -53,22 +52,53 @@ HOW - by using vanilla Javascript, HTML, and CSS
 
 *VARIABLES:*
 
+    players = could these be the symbols as well? Like player 1 is "X" and player 2 is "O"
+    player move
+    current player
+    disabled spaces
+    games
+    game rules
+
+
 INIT
 
-    1. renderUI FOR user on the page load
+    1. renderUI FOR user on the WINDOW LOAD
     2. clickable boxes RENDERED on UI FOR user input
     3. boxes fill with symbol according to which player clicks the box
-    4. game end when either symbol has 3 in a row or if all boxes are used
-    5. UI displays result
-    6. reset start button can either be visible for the duration of the game or become visible after result is shown.
+    4. game end WHEN either symbol has 3 in a row or IF all boxes > 9
+    5. UI DISPLAYS result
+    6. restart button can either be visible the duration of the game or become visible after result is shown.
     
     END
 
 **Functional**
+// Variables
+let buildUI = document.getElementById("app");
+buildUI.forEach((block, index) => {
+    block.addEventListener("click", ()=> {
+        console.log(index);
+    })
+})
+
+![tic tac toe board](/img/tictactoeboard.png)
+
+
+ticTacToe object
+
+// Functions
+function rendUI() {
+    DISPLAY header
+    DISPLAY link to game rules
+    ?? .map each block on the DOM
+    DISPLAY restart BUTTON
+}
 
 
 
 
+
+// event listeners
+window.addEventListener("load", rendUI());
 
 
 
@@ -77,3 +107,12 @@ INIT
 
 
 **Object Oriented**
+
+ticTacToe = {
+    player: ,
+    playerMove: ,
+    currentPlayer: ,
+    disabledSpaces: ,
+    games: [],
+    gameRules: ,
+}
