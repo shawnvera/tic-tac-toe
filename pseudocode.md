@@ -72,7 +72,9 @@ INIT
     END
 
 **Functional**
+
 // Variables
+
 let buildUI = document.getElementById("app");
 buildUI.forEach((block, index) => {
     block.addEventListener("click", ()=> {
