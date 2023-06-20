@@ -44,18 +44,12 @@ INIT
 
     1. renderUI for user on the page load
     2. clickable boxes for user input
-    3. boxes become symbols according to which player clicks the box
-    4. 
-
-
-
-
-
-
-
-
-
-END
+    3. boxes fill with symbol according to which player clicks the box
+    4. game end when either symbol has 3 in a row or if all boxes are used
+    5. UI displays result
+    6. reset start button can either be visible for the duration of the game or become visible after result is shown.
+    
+    END
 
 **Functional**
 
