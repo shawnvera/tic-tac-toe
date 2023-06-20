@@ -14,7 +14,7 @@ WHY - for entertainment and coding practice
 
 HOW - by using vanilla Javascript, HTML, and CSS
 
-MoSCoW
+*MoSCoW*
 
     Must have
         - game board UI
@@ -40,10 +40,23 @@ MoSCoW
     Won't have
         - login credentials
 
+*STATE:*
+
+    The program will remember the default game board
+    The program will remember the user's symbols
+    The program will remember the location of user symbols on the tic tac toe board
+    The program will remember the players
+    The program will remember whose the current player
+    The program will remember which spaces have been clicked by the user(s)
+    The program will remember past games
+    The program will remember the game rules
+
+*VARIABLES:*
+
 INIT
 
-    1. renderUI for user on the page load
-    2. clickable boxes for user input
+    1. renderUI FOR user on the page load
+    2. clickable boxes RENDERED on UI FOR user input
     3. boxes fill with symbol according to which player clicks the box
     4. game end when either symbol has 3 in a row or if all boxes are used
     5. UI displays result
