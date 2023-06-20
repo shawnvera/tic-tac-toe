@@ -66,14 +66,18 @@ INIT
     2. clickable boxes RENDERED on UI FOR user input
     3. boxes fill with symbol according to which player clicks the box
     4. game end WHEN either symbol has 3 in a row or IF all boxes > 9
+        4a. win condition, IF 3 of the same player symbols === in a row
+        4b. tie condition, IF all spaces are used and no player symbols === 3 in a row
     5. UI DISPLAYS result
-    6. restart button can either be visible the duration of the game or become visible after result is shown.
+    6. restart button can either be visible the duration of the game OR || become visible after result is shown.
     
     END
 
 **Functional**
 
 // Variables
+
+// this will create each molecule on the board
 
 let buildUI = document.getElementById("app");
 buildUI.forEach((block, index) => {
@@ -84,11 +88,10 @@ buildUI.forEach((block, index) => {
 
 ![tic tac toe board](/img/tictactoeboard.png)
 
-
 ticTacToe object
 
 // Functions
-function rendUI() {
+function initUI() {
     DISPLAY header
     DISPLAY link to game rules
     ?? .map each block on the DOM
