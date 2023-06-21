@@ -79,6 +79,7 @@ INIT
 
 // this will create each molecule on the board. It should record each click with an index
 
+// how to build the UI??? 
 let buildUI = document.getElementById("app");
 buildUI.forEach((block, index) => {
     block.addEventListener("click", ()=> {
