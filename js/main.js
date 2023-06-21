@@ -1,15 +1,46 @@
+// event listeners
+window.addEventListener("load", buildUI());
+// restart.addEventListener("click", init());
+
 //variables
 
-let buildUI = document.getElementById("app");
-buildUI.forEach((block, index) => {
-    block.addEventListener("click", ()=> {
-        console.log(index);
-    })
-})
+function buildUI() {
+    let ticTacApp = document.getElementById("app");
+    let boxes = document.createElement("table");
+    ticTacApp.appendChild(boxes);
+
+
+
+
+    /*  ticTacApp.forEach((block, index) => {
+          block.addEventListener("click", () => {
+              console.log(index);
+          })
+      })
+  }
+  */
+
+    function startGame() {
+        let box;
+        for (let i = 0; i < 9; i++) {
+            box = document.createElement("div");
+            box.addEventListener("box");
+            CSSContainerRule.appnedChild(box);
+        }
+    }
 
 //objects
+/*
 ticTacToe = {
-    player: player X or player O,
+    board = [
+    [0,0,0],
+    [0,0,0],
+    [0,0,0]
+],
+gameBoard = document.createElement("div");
+
+    playerX: 1,
+    playerO: 0,
     playerMove: the block that either player X or player O clicked,
     currentPlayer: ,
     disabledSpaces: IF disabled spaces = 9 THEN tie,
@@ -21,10 +52,11 @@ ticTacToe = {
     restart: init,
 
 }
-
+*/
 
 // Functions
 //initializes the UI on window load
+/*
 function initUI() {
     buildUI;
     DISPLAY header state - ticTacToe.header;
@@ -32,7 +64,3 @@ function initUI() {
     ?? .map each block on the DOM
     DISPLAY restart BUTTON from state
 }
-
-
-// event listeners
-window.addEventListener("load", rendUI());
