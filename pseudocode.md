@@ -63,13 +63,13 @@ HOW - by using vanilla Javascript, HTML, and CSS
 INIT
 
     1. renderUI FOR user on the WINDOW LOAD
-    2. clickable boxes RENDERED on UI FOR user input
-    3. boxes fill with symbol according to which player clicks the box
-    4. game end WHEN either symbol has 3 in a row or IF all boxes > 9
-        4a. win condition, IF 3 of the same player symbols === in a row
-        4b. tie condition, IF all spaces are used and no player symbols === 3 in a row
-    5. UI DISPLAYS result
-    6. restart button can either be visible the duration of the game OR || become visible after result is shown.
+        1a. clickable boxes RENDERED on UI FOR user input
+    2. boxes fill with symbol according to which player clicks the box
+    3. game end WHEN either symbol has 3 in a row or IF all boxes > 9
+        3a. win condition, IF 3 of the same player symbols === in a row
+        3b. tie condition, IF all spaces are used and no player symbols === 3 in a row
+    4. UI DISPLAYS result
+    5. restart button can either be visible the duration of the game OR || become visible after result is shown.
     
     END
 
@@ -77,7 +77,7 @@ INIT
 
 // Variables
 
-// this will create each molecule on the board
+// this will create each molecule on the board. It should record each click with an index
 
 let buildUI = document.getElementById("app");
 buildUI.forEach((block, index) => {
@@ -86,16 +86,22 @@ buildUI.forEach((block, index) => {
     })
 })
 
+//image of what the game board should look like
 ![tic tac toe board](/img/tictactoeboard.png)
 
-ticTacToe object
+ticTacToe object {
+    can the majority of the variables be in state here?
+    Use methods for majority of the function as well?
+}
 
 // Functions
+
+//initializes the UI on window load
 function initUI() {
-    DISPLAY header
-    DISPLAY link to game rules
+    DISPLAY header state - ticTacToe.header;
+    DISPLAY link to game rules from state
     ?? .map each block on the DOM
-    DISPLAY restart BUTTON
+    DISPLAY restart BUTTON from state
 }
 
 
@@ -119,5 +125,10 @@ ticTacToe = {
     currentPlayer: ,
     disabledSpaces: ,
     games: [],
-    gameRules: ,
+    gameRules: document.createElement("<a>") ;
+    document.body.appendChild("href="https://www.exploratorium.edu/explore/puzzles/tictactoe#:~:text=Rules%20for%20Tic%2DTac%2DToe&text=Players%20take%20turns%20putting%20their,game%20ends%20in%20a%20tie."),
+    header: document.createElement("<h1>");
+    document.body.appendChild("Tic-Tac-Toe game"),
+    restart: init,
+
 }
