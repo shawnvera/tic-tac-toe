@@ -98,8 +98,9 @@ ticTacToe object {
 
 //initializes the UI on window load
 function initUI() {
+    buildUI;
     DISPLAY header state - ticTacToe.header;
-    DISPLAY link to game rules from state
+    DISPLAY link to game rules from state - ticTacToe.gameRules;
     ?? .map each block on the DOM
     DISPLAY restart BUTTON from state
 }
@@ -120,15 +121,15 @@ window.addEventListener("load", rendUI());
 **Object Oriented**
 
 ticTacToe = {
-    player: ,
-    playerMove: ,
+    player: player X or player O,
+    playerMove: the block that either player X or player O clicked,
     currentPlayer: ,
-    disabledSpaces: ,
+    disabledSpaces: IF disabled spaces = 9 THEN tie,
     games: [],
-    gameRules: document.createElement("<a>") ;
-    document.body.appendChild("href="https://www.exploratorium.edu/explore/puzzles/tictactoe#:~:text=Rules%20for%20Tic%2DTac%2DToe&text=Players%20take%20turns%20putting%20their,game%20ends%20in%20a%20tie."),
-    header: document.createElement("<h1>");
-    document.body.appendChild("Tic-Tac-Toe game"),
+    gameRules: document.createElementNS("https://www.exploratorium.edu/explore/puzzles/tictactoe#:~:text=Rules%20for%20Tic%2DTac%2DToe&text=Players%20take%20turns%20putting%20their,game%20ends%20in%20a%20tie.", "a");
+    header: let header1 = document.createElement("<h1>");
+    let ticTac = document.createTextNode("Tic-Tac-Toe game");
+    header1.appendChild(ticTac),
     restart: init,
 
 }
