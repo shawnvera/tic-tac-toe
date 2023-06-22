@@ -57,13 +57,13 @@ function startGame() {
     let col;
     let col1;
     let col2;
-    for (let i = 0; i < 9; i++) {
-        box = document.createElement("div");
+    box = document.createElement("div");
+    box.classList = "container";
+    for (let i = 0; i < 3; i++) {
         row = document.createElement("div");
         col = document.createElement("div");
         col1 = document.createElement("div");
         col2 = document.createElement("div");
-        box.classList = "container";
         row.classList = "row-md border border-success";
         col.classList = "col-md-4 p-3 border-bottom border-subtle";
         col1.classList = "col-md-4 p-3 border-bottom border-subtle";
@@ -71,6 +71,7 @@ function startGame() {
         // box.addEventListener("click", );
         ticTacApp.appendChild(box).appendChild(row).appendChild(col).appendChild(col1).appendChild(col2);
     }
+    
 }
 startGame();
 
