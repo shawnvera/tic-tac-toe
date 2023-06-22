@@ -9,14 +9,14 @@ function clickMe(e) {
 }
 
 function buildUI() {
-    
+
     var board = {
         id: "board",
         type: "div",
         listener: clickMe,
         parent: "app",
         classList: "container"
-}
+    }
 }
 // var gameBoard = generateHTMLElement(board);
 // console.log(board)
@@ -59,19 +59,25 @@ function startGame() {
     let col2;
     box = document.createElement("div");
     box.classList = "container";
+
+
     for (let i = 0; i < 3; i++) {
         row = document.createElement("div");
+        row.classList = "row-md border border-success";
         col = document.createElement("div");
         col1 = document.createElement("div");
         col2 = document.createElement("div");
-        row.classList = "row-md border border-success";
-        col.classList = "col-md-4 p-3 border-bottom border-subtle";
-        col1.classList = "col-md-4 p-3 border-bottom border-subtle";
-        col2.classList = "col-md-4 p-3 border-bottom border-subtle";
+        col.classList = "col-md-4 p-3 border border-dark";
+        col1.classList = "col-md-4 p-3 border border-dark";
+        col2.classList = "col-md-4 p-3 border border-dark";
         // box.addEventListener("click", );
-        ticTacApp.appendChild(box).appendChild(row).appendChild(col).appendChild(col1).appendChild(col2);
+        ticTacApp.appendChild(box);
+        box.appendChild(row);
+        row.appendChild(col);
+        row.appendChild(col1);
+        row.appendChild(col2);
     }
-    
+
 }
 startGame();
 
