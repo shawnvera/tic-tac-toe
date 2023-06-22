@@ -7,7 +7,7 @@ window.addEventListener("load", buildUI());
 function buildUI() {
     let ticTacApp = document.getElementById("app");
     let boxes = document.createElement("table");
-    ticTacApp.appendChild(boxes);
+    document.body.appendChild(boxes);
 
 
 
@@ -64,3 +64,4 @@ function initUI() {
     ?? .map each block on the DOM
     DISPLAY restart BUTTON from state
 }
+*/}
