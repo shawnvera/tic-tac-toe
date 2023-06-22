@@ -1,5 +1,5 @@
 // event listeners
-window.addEventListener("load", buildUI);
+window.addEventListener("load", buildUI());
 // restart.addEventListener("click", init());
 
 // global variables
@@ -13,7 +13,7 @@ function buildUI() {
     var board = {
         id: "board",
         type: "div",
-        listener: clickMe,
+        listener: clickMe(),
         parent: "app",
         classList: "container"
 }
