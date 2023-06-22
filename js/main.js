@@ -1,47 +1,71 @@
 // event listeners
-window.addEventListener("load", buildUI());
+window.addEventListener("load", buildUI);
 // restart.addEventListener("click", init());
 
 // global variables
 
-var board = {
-    id: "board",
-    type: "div",
-    listener: clickMe,
-    parent: "app",
-    classList: "container"
+function clickMe(e) {
+    console.log("you clicked " + e.target.id);
 }
-
-function generateHTMLElement(board){
-    let element = document.createElement(board.type);
-    element.classList = board.classList;
-}
-
 
 function buildUI() {
     let ticTacApp = document.getElementById("app");
-    let boxes = document.createElement("table");
-    document.body.appendChild(boxes);
+    var board = {
+        id: "board",
+        type: "div",
+        listener: clickMe,
+        parent: "app",
+        classList: "container"
+}
+var gameBoard = generateHTMLElement(board);
+console.log(board)
+}
 
 
-
-
-    /*  ticTacApp.forEach((block, index) => {
-          block.addEventListener("click", () => {
-              console.log(index);
-          })
-      })
-  }
-  */
-
-    function startGame() {
-        let box;
-        for (let i = 0; i < 9; i++) {
-            box = document.createElement("div");
-            box.addEventListener("box");
-            CSSContainerRule.appnedChild(box);
-        }
+function generateHTMLElement(board) {
+    let element = document.createElement(board.type);
+    element.classList = board.classList;
+    if (board.id) {
+        element.id = board.id;
     }
+    if (board.parent) {
+        board.parent.appendChild(element);
+    }
+    if (board.listener) {
+        element.addEventListener('click', board.listener);
+    }
+    if (board.style) {
+        element.style = board.style;
+    }
+    return element;
+}
+
+
+
+
+
+
+
+
+function startGame() {
+    let box;
+    for (let i = 0; i < 9; i++) {
+        box = document.createElement("div");
+        box.addEventListener("box");
+        CSSContainerRule.appnedChild(box);
+    }
+}
+
+
+
+
+/*  ticTacApp.forEach((block, index) => {
+      block.addEventListener("click", () => {
+          console.log(index);
+      })
+  })
+}
+*/
 
 //objects
 /*
@@ -70,12 +94,11 @@ gameBoard = document.createElement("div");
 
 // Functions
 //initializes the UI on window load
-/*
-function initUI() {
-    buildUI;
-    DISPLAY header state - ticTacToe.header;
-    DISPLAY link to game rules from state - ticTacToe.gameRules;
-    ?? .map each block on the DOM
-    DISPLAY restart BUTTON from state
-}
-*/}
+
+// function initUI() {
+//     buildUI;
+//     DISPLAY header state - ticTacToe.header;
+//     DISPLAY link to game rules from state - ticTacToe.gameRules;
+//     ?? .map each block on the DOM
+//     DISPLAY restart BUTTON from state
+//
