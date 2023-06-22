@@ -2,7 +2,21 @@
 window.addEventListener("load", buildUI());
 // restart.addEventListener("click", init());
 
-//variables
+// global variables
+
+var board = {
+    id: "board",
+    type: "div",
+    listener: clickMe,
+    parent: "app",
+    classList: "container"
+}
+
+function generateHTMLElement(board){
+    let element = document.createElement(board.type);
+    element.classList = board.classList;
+}
+
 
 function buildUI() {
     let ticTacApp = document.getElementById("app");
