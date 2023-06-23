@@ -6,19 +6,13 @@ window.addEventListener("load", init);
 let ticTacApp = document.getElementById("app");
 let btn;
 let xTurn = true;
+let correctCombination;
 
 let ticTacToe = {
     header: "Tic-Tac-Toe",
     classList: "text-center",
-    currentPlayer: 0,
-    playerX: 0,
-    playerO: 1,
-    playerT: null,
-    gameBoard: [
-        [0,0,0],
-        [0,0,0],
-        [0,0,0]
-    ],
+    gameBoard: [0, 0, 0, 0, 0, 0, 0, 0, 0],
+    clicks: 0
 }
 
 // functions
@@ -35,7 +29,8 @@ function init() {
     let col1;
     let col2;
     let h1;
-let h2;
+    let h2;
+
     h1 = document.createElement("div");
     h2 = document.createElement("h2");
     h1.classList = "text-center"
@@ -45,33 +40,21 @@ let h2;
 
     box = document.createElement("div");
     box.classList = "box p-5 border border-dark";
-
+    ticTacApp.appendChild(box);
+    row = document.createElement("div");
+    row.classList = "row border border-dark";
+    box.appendChild(row);
     // could I use a .forEach to simplify this?
 
-    for (let i = 0; i < 3; i++) {
-
-        row = document.createElement("div");
-
+    for (let i = 0; i < 9; i++) {
         col = document.createElement("div");
-        col1 = document.createElement("div");
-        col2 = document.createElement("div");
-
-        row.classList = "row border border-dark";
-
-        col.classList = "col-4 p-5 border border-dark";
-        col1.classList = "col-4 p-5 border border-dark";
-        col2.classList = "col-4 p-5 border border-dark";
-
-        ticTacApp.appendChild(box);
-        box.appendChild(row);
-        row.appendChild(col);
-        row.appendChild(col1);
-        row.appendChild(col2);
-
+        col.classList = "col-4 p-5 border border-dark text-center";
+        col.id = 1;
         col.addEventListener("click", clickMe, { once: true });
-        col1.addEventListener("click", clickMe, { once: true });
-        col2.addEventListener("click", clickMe, { once: true });
+        row.appendChild(col);
     }
+
+
 
     btn = document.createElement("div");
     btn.classList = "btn p-3 btn-primary";
@@ -81,23 +64,42 @@ let h2;
 }
 
 function clickMe(e) {
-    // col is not defined here ??
-    // if(col==="clicked"){
-    //     col.display = ticTacToe.currentPlayer;
-    let currentBox = e.target;
-
-    if(xTurn){
-        currentBox.innerText = "X"
-        xTurn = false;
-    } else {
+    const currentBox = e.target;
+    let num;
+    let displayTurn = document.createElement("div");
+    num += 1;
+    ticTacToe.clicks++
+    console.log(ticTacToe.clicks);
+    currentBox.innerText = "X"
+    displayTurn.textContent = "Player's turn " + currentBox.innerText;
+    if (!xTurn) {
         currentBox.innerText = "O"
-        xTurn = true;
+        displayTurn.textContent = "Player's turn " + currentBox.innerText;
     }
-    currentPlayer = 1;
-    ticTacToe.gameBoard.push[0] = e.target;
-    console.log(ticTacToe.gameBoard);
+    xTurn = !xTurn
+    ticTacToe.gameBoard[e.target.id];
+    console.log(num);
 
+    ticTacApp.appendChild(displayTurn);
 }
+
+let winConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6], [0, 3, 6], [1, 4, 7], [2, 5, 8]] // loop thru a grouping of indexes
+
+for (let i = 0; i = winConditions.length; i++) {
+    if (ticTacToe.gameBoard[winConditions[i][0]] + ticTacToe.gameBoard[winConditions[i][1]] + ticTacToe.gameBoard[winConditions[i][2]]) {
+        displayTurn.textContent = currentBox.innerText + " wins the game!";
+    } else if (ticTacToe.clicks === 8) {
+        displayTurn.textContent = "Tie!";
+    }
+}
+// loop thru winging condition loop thru win[i]
+// sum = winConditions[i][0] +
+
+
+
+
+
+
 
 
 /*  ticTacApp.forEach((block, index) => {
