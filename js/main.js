@@ -57,25 +57,36 @@ function startGame() {
     let col;
     let col1;
     let col2;
-    box = document.createElement("div");
-    box.classList = "container";
+    
 
 
-    for (let i = 0; i < 3; i++) {
-        row = document.createElement("div");
-        row.classList = "row-md border border-success";
-        col = document.createElement("div");
-        col1 = document.createElement("div");
-        col2 = document.createElement("div");
-        col.classList = "col-md-4 p-3 border border-dark";
-        col1.classList = "col-md-4 p-3 border border-dark";
-        col2.classList = "col-md-4 p-3 border border-dark";
-        // box.addEventListener("click", );
+    for (let i = 0; i < 9; i++) {
+        box = document.createElement("div");
+        box.classList = "box p-5 border border-dark";
+box.style = "border-left; 0; border-top: 0";
+
+
+        // row = document.createElement("div");
+        
+        // col = document.createElement("div");
+        // col1 = document.createElement("div");
+        // col2 = document.createElement("div");
+        
+        // row.classList = "row";
+        
+        // col.classList = "col";
+        // col1.classList = "col";
+        // col2.classList = "col";
+        
         ticTacApp.appendChild(box);
-        box.appendChild(row);
-        row.appendChild(col);
-        row.appendChild(col1);
-        row.appendChild(col2);
+        // box.appendChild(row);
+        // row.appendChild(col);
+        // row.appendChild(col1);
+        // row.appendChild(col2);
+
+
+
+        // box.addEventListener("click", );
     }
 
 }
