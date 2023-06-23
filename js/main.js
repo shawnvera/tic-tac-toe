@@ -19,6 +19,9 @@ let ticTacToe = {
 
 //restart button
 function restart() {
+    // replace with init
+    // reset the init
+    // blank out .innerHTML = ""
     location.reload();
 }
 
@@ -65,6 +68,7 @@ function init() {
 
 function clickMe(e) {
     const currentBox = e.target;
+    // set to 0
     let num;
     let displayTurn = document.createElement("div");
     num += 1;
