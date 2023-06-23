@@ -5,6 +5,7 @@ window.addEventListener("load", init);
 // global variables
 let ticTacApp = document.getElementById("app");
 let btn;
+let xTurn = true;
 
 let ticTacToe = {
     header: "Tic-Tac-Toe",
@@ -80,13 +81,22 @@ let h2;
 }
 
 function clickMe(e) {
-    if(col==="clicked"){
-        col.display = ticTacToe.currentPlayer;
+    // col is not defined here ??
+    // if(col==="clicked"){
+    //     col.display = ticTacToe.currentPlayer;
+    let currentBox = e.target;
+
+    if(xTurn){
+        currentBox.innerText = "X"
+        xTurn = false;
+    } else {
+        currentBox.innerText = "O"
+        xTurn = true;
+    }
     currentPlayer = 1;
-    ticTacToe.gameBoard.push = e.target;
+    ticTacToe.gameBoard.push[0] = e.target;
     console.log(ticTacToe.gameBoard);
 
-}
 }
 
 
